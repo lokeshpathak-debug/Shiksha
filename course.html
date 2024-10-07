@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course details for the selected programming course.">
+    <title>Course Details - MyCodingPlatform</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="MyCodingPlatform Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="course-details">
+        <div class="container">
+            <h1 id="course-title">Course Title</h1>
+            <p>Description of the selected course will go here. Include information like syllabus, learning outcomes, and prerequisites.</p>
+            <h2>Course Content</h2>
+            <ul>
+                <li>Module 1: Introduction to Programming</li>
+                <li>Module 2: Basic Syntax and Data Types</li>
+                <li>Module 3: Functions and Loops</li>
+                <li>Module 4: Advanced Topics and Projects</li>
+            </ul>
+            <a href="enroll.html" class="button">Enroll Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MyCodingPlatform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to dynamically set course title based on URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const course = urlParams.get('course');
+        const courseTitleMap = {
+            python: "Python for Beginners",
+            javascript: "JavaScript Essentials",
+            java: "Advanced Java Programming"
+        };
+        document.getElementById('course-title').innerText = courseTitleMap[course] || "Course Not Found";
+    </script>
+</body>
+</html>
